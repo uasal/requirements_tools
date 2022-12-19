@@ -1,0 +1,19 @@
+#via http://stackoverflow.com/a/11030209
+TXTDIR=dist
+HTMLS=$(wildcard dist/*.html)
+MDS=$(patsubst %.html,%.markdown, $(HTMLS)) $(patsubst %.html,%_beamer.tex,$(HTMLS))
+.PHONY : all
+
+all : $(MDS) 
+
+#$(TXTDIR) :
+#	mkdir $(TXTDIR)
+
+$(TXTDIR)/%.markdown : $(TXTDIR)/%.html $(TXTDIR)
+	pandoc -f html -t markdown -s $< -o $@
+
+
+$(TXTDIR)/%_beamer.tex : $(TXTDIR)/%.html $(TXTDIR)
+		pandoc -t beamer -f html+tex_math_dollars+tex_math_single_backslash $< -o $@
+		#preserves math,see: http://stackoverflow.com/questions/11338049/how-to-convert-html-with-mathjax-into-latex-using-pandoc#11461355
+

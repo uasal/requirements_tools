@@ -1,7 +1,6 @@
-doorstop publish all ./dist
-#doorstop publish all ./markdown -m
-#call pandoc to convert html to markdown
-make -f MakeFile
+#!/bin/bash
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+make -f $SCRIPT_DIR/MakeMarkdown
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     #(https://stackoverflow.com/a/8597411)
@@ -20,13 +19,13 @@ else
     sed -i -e 's/{.*}//' dist/*.markdown
     sed -i -e 's/.html/.markdown/g' dist/*.markdown
 fi
-python RunGraphviz.py
-python MakeLinksGitHubFriendly.py
+python $SCRIPT_DIR/RunGraphviz.py
+python $SCRIPT_DIR/MakeLinksGitHubFriendly.py
 
 #./guides/example_hook.sh
 
 #to make latex beamer slides, uncomment next three lines:
-make -f MakeBeamer
+make -f $SCRIPT_DIR/MakeBeamer
 
 #sed -i 's/{{find}}/{{replace}}/g' {{filename}}
 sed -i ''  -e 's|L0.html\\\#||g' dist/*.tex
@@ -37,6 +36,6 @@ sed -i ''  -e 's|L3.html\\\#||g' dist/*.tex
 sed -i ''  -e 's|href|hyperlink|g' dist/*.tex  #caution, this might breake weblinks
 
 cd dist
-xelatex beamer.tex
-
+xelatex latest.tex
+xelatex latest.tex
 

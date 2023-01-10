@@ -16,7 +16,7 @@ for markd_file in md_files:
                     #print(s2)
                         if "#" in s2:
                             split_links=s2.split("#")
-                            new_link=split_links[0]+"#1-"+split_links[1].lower().replace('.', '').replace(' ','').replace(")","-) ")#+'-'
+                            new_link=split_links[0]+"#1-"+split_links[1].lower().replace('.', '').replace(' ','').replace(")",") ")#+'-'
                         if i >0:
                             new_line+="  ["+new_link
                         else:

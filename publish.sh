@@ -33,7 +33,7 @@ sed -i ''  -e 's|L1.html\\\#||g' dist/*.tex
 sed -i ''  -e 's|L2.html\\\#||g' dist/*.tex
 sed -i ''  -e 's|L3.html\\\#||g' dist/*.tex
 #fix internal links:
-sed -i ''  -e 's|href|hyperlink|g' dist/*.tex  #caution, this might breake weblinks
+sed -i ''  -e 's|href{L|hyperlink{L|g' dist/*.tex  # should not break weblinks so long as they don't start with L
 
 cd dist
 xelatex latest.tex

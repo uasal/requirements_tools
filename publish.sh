@@ -32,6 +32,7 @@ sed -i ''  -e 's|L0.html\\\#||g' dist/*.tex
 sed -i ''  -e 's|L1.html\\\#||g' dist/*.tex
 sed -i ''  -e 's|L2.html\\\#||g' dist/*.tex
 sed -i ''  -e 's|L3.html\\\#||g' dist/*.tex
+sed -i ''  -e 's|L4-FOA-M2.html\\\#||g' dist/*.tex
 #fix internal links:
 sed -i ''  -e 's|href{L|hyperlink{L|g' dist/*.tex  # should not break weblinks so long as they don't start with L
 

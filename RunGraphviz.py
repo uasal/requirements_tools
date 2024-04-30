@@ -17,12 +17,12 @@ use_short_names=True
 colors=['black','blue','chocolate','crimson', 'orchid', 'green','darkgreen','khaki','violet','purple','orange','lightblue2',]
 n_colors = len(colors)
 
-level_colors = ['yellow','gray88','lightblue','green',]
+level_colors = ['yellow','gray88','lightblue','green','black']
 
 for doc_n, document in  enumerate(tree.documents):
 
-    #skip level 3:
-    if doc_n >3:
+    #skip level 4:
+    if doc_n >4:
         continue
     for i,item in enumerate(document.items):
         content=""
@@ -63,8 +63,8 @@ g = Digraph(comment='The Requirements', format='png',
 
 for doc_n, document in  enumerate(tree.documents):
     print(level_colors[doc_n])
-    #skip level 3:
-    if doc_n >3:
+    #skip level 4:
+    if doc_n >4:
         continue
     nodes=[]
     edges=[]

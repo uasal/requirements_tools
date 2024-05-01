@@ -17,7 +17,7 @@ use_short_names=True
 colors=['black','blue','chocolate','crimson', 'orchid', 'green','darkgreen','khaki','violet','purple','orange','lightblue2',]
 n_colors = len(colors)
 
-level_colors = ['yellow','gray88','lightblue','green','black']
+level_colors = ['yellow','gray88','lightblue','green','violet',]
 
 for doc_n, document in  enumerate(tree.documents):
 

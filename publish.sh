@@ -22,6 +22,7 @@ else
 fi
 
 python $SCRIPT_DIR/RunGraphviz.py
+python $SCRIPT_DIR/MarkdownCombiner.py
 python $SCRIPT_DIR/MakeLinksGitHubFriendly.py
 
 #sed -i 's/{{find}}/{{replace}}/g' {{filename}}

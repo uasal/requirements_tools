@@ -1,10 +1,14 @@
 
-#python MakeLinksGitHubFriendly.py
+# python MakeLinksGitHubFriendly.py
+
+# For version of markdown / pandoc being used and for them to work in the github environment, 
+# link portions to the sections must be lower-cased. 
+# Example: [L1-0002](L1.markdown#l1-0002)
 
 import glob
 import os
 
-md_files=glob.glob("dist/*.markdown")
+md_files=glob.glob("dist/L*.markdown")
 for markd_file in md_files:
     with open(markd_file+".out", "wt") as fout:
         with open(markd_file, "rt") as fin:
@@ -16,7 +20,7 @@ for markd_file in md_files:
                     #print(s2)
                         if "#" in s2:
                             split_links=s2.split("#")
-                            new_link=split_links[0]+"#1-"+split_links[1].lower().replace('.', '').replace(' ','').replace(")",") ")#+'-'
+                            new_link=split_links[0] + "#" + split_links[1].lower().replace('.', '').replace(' ','').replace(")",") ")#+'-'
                         if i >0:
                             new_line+="  ["+new_link
                         else:

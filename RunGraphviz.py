@@ -17,11 +17,13 @@ use_short_names=True
 colors=['black','blue','chocolate','crimson', 'orchid', 'green','darkgreen','khaki','violet','purple','orange','lightblue2',]
 n_colors = len(colors)
 
-level_colors = ['yellow','gray88','lightblue','green',]
+# Adding additional colors for levels as its potentially treating each csv as a different level so
+# there are currently 8 levels its potentially trying to add into there at the moment.
+level_colors = ['yellow','gray88','lightblue','green','violet','crimson','blue','khaki',]
 
 for doc_n, document in  enumerate(tree.documents):
 
-    #skip level 3:
+    # Skips level 4:
     if doc_n >3:
         continue
     for i,item in enumerate(document.items):
@@ -63,7 +65,7 @@ g = Digraph(comment='The Requirements', format='png',
 
 for doc_n, document in  enumerate(tree.documents):
     print(level_colors[doc_n])
-    #skip level 3:
+    # Skips level 4:
     if doc_n >3:
         continue
     nodes=[]

@@ -22,8 +22,10 @@ else
 fi
 
 python $SCRIPT_DIR/RunGraphviz.py
+# For generating the Pearl_Requirements.markdown file
 python $SCRIPT_DIR/MarkdownCombiner.py
 python $SCRIPT_DIR/MakeLinksGitHubFriendly.py
+python $SCRIPT_DIR/BeamerLinkCorrection.py
 
 #sed -i 's/{{find}}/{{replace}}/g' {{filename}}
 # Note- This doesn't appear to be working. Keeping it for now until verified.
@@ -33,8 +35,8 @@ sed -i ''  -e 's|L2.html\\\#||g' dist/*.tex
 sed -i ''  -e 's|L3.html\\\#||g' dist/*.tex
 sed -i ''  -e 's|L4-FOA-M1.html\\\#||g' dist/*.tex
 sed -i ''  -e 's|L4-FOA-M2.html\\\#||g' dist/*.tex
-sed -i ''  -e 's|L4-FOA-M2.PMSS\\\#||g' dist/*.tex
-sed -i ''  -e 's|L4-FOA-M2.Structure\\\#||g' dist/*.tex
+sed -i ''  -e 's|L4-FOA-M2.PMSS.html\\\#||g' dist/*.tex
+sed -i ''  -e 's|L4-FOA-M2.Structure.html\\\#||g' dist/*.tex
 #fix internal links:
 sed -i ''  -e 's|href{L|hyperlink{L|g' dist/*.tex  # should not break weblinks so long as they don't start with L
 

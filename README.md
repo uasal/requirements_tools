@@ -7,4 +7,7 @@
 - Visual fix to latex href links (pink -> blue)
   - Pandocs defaults to pink for the external url links
 - Graphviz fix for level 4 requirements
-  - (Once the level fix for doorstop is implentmented this file should no longer have to be editted further)  
+  - (Once the level fix for doorstop is implentmented this file should no longer have to be editted further)
+- Latex Beamer Link Fix
+  - L4-FOA-PMSS and L4-FOA-Struct not linking correctly in latest.pdf produced from beamers
+  - Error in beamers / .html is being kept in converting html to beamer  

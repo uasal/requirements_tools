@@ -1,3 +1,3 @@
-graphviz==0.16
+graphviz
 numpy
 PyYAML 

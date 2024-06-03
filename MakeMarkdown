@@ -1,5 +1,5 @@
 #via http://stackoverflow.com/a/11030209
-TXTDIR=dist/documents/
+TXTDIR=dist/documents
 HTMLS=$(wildcard dist/documents/*.html)
 MDS=$(patsubst %.html,%.markdown, $(HTMLS)) $(patsubst %.html,%_beamer.tex,$(HTMLS))
 .PHONY : all

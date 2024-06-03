@@ -8,7 +8,7 @@
 import glob
 import os
 
-md_files=glob.glob("dist/L*.markdown")
+md_files=glob.glob("dist/markdown/L*.markdown")
 for markd_file in md_files:
     with open(markd_file+".out", "wt") as fout:
         with open(markd_file, "rt") as fin:

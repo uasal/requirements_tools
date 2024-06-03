@@ -12,7 +12,7 @@ import os
 # Variables -----------------------------------------------------------------------------------------------------------
 
 # File variables
-beamer_files = sorted(glob.glob("dist/L*_beamer.tex"))
+beamer_files = sorted(glob.glob("dist/latex/L*_beamer.tex"))
 
 replacements = {"{L4-FOA-M1.html\\#": "{",
                 "{L4-FOA-M2.html\\#": "{",

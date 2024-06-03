@@ -31,7 +31,7 @@ for doc_n, document in  enumerate(tree.documents):
         if use_id:
             content=item.uid.value+"\n"
         if use_short_names:
-            content=content+str(item.data["short name"])
+            content=content+str(item.data["header"])
         else:
             content=content+item.uid.value+"\n"+textwrap.fill(item.text,35)
         #skip items that have no back links, unless they are the first level
@@ -75,7 +75,7 @@ for doc_n, document in  enumerate(tree.documents):
         if use_id:
             content=item.uid.value+"\n"
         if use_short_names:
-            content=content+str(item.data["short name"])
+            content=content+str(item.data["header"])
         else:
             content=content+item.uid.value+"\n"+textwrap.fill(item.text,35)
         #skip items that have no back links, unless they are the first level
@@ -109,7 +109,7 @@ for doc_n, document in  enumerate(tree.documents):
             c.edges(edges)
             for i,item in enumerate(document.items):
                 c.node(item.uid.value,label=item.uid.value
-                +"\n"+item.data["short name"],
+                +"\n"+item.data["header"],
                            bgcolor=level_colors[doc_n],
                            fontsize="24",
                            #sep="+1"

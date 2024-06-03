@@ -11,8 +11,8 @@ import os
 # Variables -----------------------------------------------------------------------------------------------------------
 
 # File variables
-md_files = sorted(glob.glob("dist/L*.markdown"))
-output_file = "dist/Pearl_Requirements.markdown"
+md_files = sorted(glob.glob("dist/markdown/L*.markdown"))
+output_file = "dist/markdown/Pearl_Requirements.markdown"
 
 # Dict of items to replace for each line (varies on version / temp fix) for the combined markdown file generation.
 replacements = {"==================": "------------------", "================": "----------------",

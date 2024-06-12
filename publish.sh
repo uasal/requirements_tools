@@ -1,7 +1,7 @@
 #!/bin/bash
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-# This makes markdown from HTML and the Latex Beamers
-make -f $SCRIPT_DIR/MakeMarkdown
+# This makes latex beamers / no need for markdown creation with doorstop update
+make -f $SCRIPT_DIR/MakeBeamers
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     #(https://stackoverflow.com/a/8597411)
@@ -23,9 +23,10 @@ fi
 
 python $SCRIPT_DIR/RunGraphviz.py
 # For generating the Pearl_Requirements.markdown file
-python $SCRIPT_DIR/MarkdownCombiner.py
-python $SCRIPT_DIR/MakeLinksGitHubFriendly.py
-python $SCRIPT_DIR/BeamerLinkCorrection.py
+# These should no longer be needed with doorstop update that is pending completion
+#python $SCRIPT_DIR/MarkdownCombiner.py
+#python $SCRIPT_DIR/MakeLinksGitHubFriendly.py
+#python $SCRIPT_DIR/BeamerLinkCorrection.py
 
 #sed -i 's/{{find}}/{{replace}}/g' {{filename}}
 # Note- This doesn't appear to be working. Keeping it for now until verified.
@@ -40,7 +41,7 @@ python $SCRIPT_DIR/BeamerLinkCorrection.py
 #fix internal links:
 #sed -i ''  -e 's|href{L|hyperlink{L|g' dist/*.tex  # should not break weblinks so long as they don't start with L
 
-cd dist/documents
-xelatex latest.tex
-xelatex latest.tex
+cd dist/latex
+xelatex Pearl_Requirements.tex
+xelatex Pearl_Requirements.tex
 

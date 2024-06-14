@@ -22,8 +22,9 @@ else
 fi
 
 python $SCRIPT_DIR/RunGraphviz.py
+
 # For generating the Pearl_Requirements.markdown file
-# These should no longer be needed with doorstop update that is pending completion
+# These should no longer be needed with doorstop update that is pending completion (moved to archive-scripts)
 #python $SCRIPT_DIR/MarkdownCombiner.py
 #python $SCRIPT_DIR/MakeLinksGitHubFriendly.py
 #python $SCRIPT_DIR/BeamerLinkCorrection.py
@@ -41,7 +42,9 @@ python $SCRIPT_DIR/RunGraphviz.py
 #fix internal links:
 #sed -i ''  -e 's|href{L|hyperlink{L|g' dist/*.tex  # should not break weblinks so long as they don't start with L
 
-cd dist/latex
-xelatex Pearl_Requirements.tex
-xelatex Pearl_Requirements.tex
+# Commenting this out for now for testing GitHub Workflow with latex compilation so this wouldn't need to be edited
+# in this file but just the workflow for directory or name changes.
+#cd dist/latex
+#xelatex Pearl_Requirements.tex
+#xelatex Pearl_Requirements.tex
 

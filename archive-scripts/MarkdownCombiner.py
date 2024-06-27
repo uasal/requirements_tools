@@ -106,9 +106,9 @@ for file in md_files:
             for line in reading_file:
                 adjusted_line = replace_all(line, replacements)
                 output.write(adjusted_line)
+    reading_file.close()
 
 # Closing out opened files --------------------------------------------------------------------------------------------
 
 output.close()
-reading_file.close()
 print("Completed markdown link correction.")

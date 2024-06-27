@@ -14,3 +14,11 @@
 - Doorstop Update Adjustments
   - Directory updates / changes to appropriate impacted files.
   - RunGraphviz.py adjustments for Doorstop change to 'header' variable instead of 'short name'
+    - Additional adjustments to directory change to point to dist/latex
+  - Scripts that are no longer being used with updates have been moved to the Archives-Scripts directory.
+  - Name to output latex beamer document changes to Pearl_Requirements.
+    - (Primarily naming it something that doesn't start with an 'l' for the L?.tex outputs to be the only ones targeted)
+  - Previous MakeMarkdown (copy in archive-scripts directory) renamed to MakeBeamers.
+    - Adjusted for latex beamers to be generated from L?.tex doorstop outputs in the dist/latex directory.
+  - Publish.sh adjusted with script changes.
+    - Directories updated for compiling latex beamer (Pearl_Requirements.tex)

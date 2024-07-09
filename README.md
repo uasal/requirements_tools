@@ -22,3 +22,6 @@
     - Adjusted for latex beamers to be generated from L?.tex doorstop outputs in the dist/latex directory.
   - Publish.sh adjusted with script changes.
     - Directories updated for compiling latex beamer (Pearl_Requirements.tex)
+  - Requirements.txt updated
+    - Adding setuptools / doorstop uses distutilis which starting with Python 3.10, was deprecated.
+    - Can remove the GitHub Pandoc Actions in the pearl_requirements workflow so settings can be changed.

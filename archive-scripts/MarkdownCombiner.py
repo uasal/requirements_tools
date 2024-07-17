@@ -11,8 +11,8 @@ import os
 # Variables -----------------------------------------------------------------------------------------------------------
 
 # File variables
-md_files = sorted(glob.glob("dist/L*.markdown"))
-output_file = "dist/Pearl_Requirements.markdown"
+md_files = sorted(glob.glob("dist/markdown/L*.markdown"))
+output_file = "dist/markdown/Pearl_Requirements.markdown"
 
 # Dict of items to replace for each line (varies on version / temp fix) for the combined markdown file generation.
 replacements = {"==================": "------------------", "================": "----------------",
@@ -106,9 +106,9 @@ for file in md_files:
             for line in reading_file:
                 adjusted_line = replace_all(line, replacements)
                 output.write(adjusted_line)
+    reading_file.close()
 
 # Closing out opened files --------------------------------------------------------------------------------------------
 
 output.close()
-reading_file.close()
 print("Completed markdown link correction.")

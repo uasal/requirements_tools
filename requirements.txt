@@ -1,3 +1,6 @@
-graphviz==0.16
+graphviz
 numpy
-PyYAML 
+PyYAML
+pandoc>=2.3
+pydot>=2
+

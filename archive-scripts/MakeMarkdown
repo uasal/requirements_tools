@@ -1,6 +1,6 @@
 #via http://stackoverflow.com/a/11030209
-TXTDIR=dist
-HTMLS=$(wildcard dist/*.html)
+TXTDIR=dist/documents
+HTMLS=$(wildcard dist/documents/*.html)
 MDS=$(patsubst %.html,%.markdown, $(HTMLS)) $(patsubst %.html,%_beamer.tex,$(HTMLS))
 .PHONY : all
 

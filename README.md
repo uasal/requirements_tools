@@ -1,13 +1,26 @@
-## Branch Info / Summary
-- Contains publish.sh updates for adding L4 requirements
-  - Part of this script looks like it has componets that are not working but leaving them as is for now and have comments to the areas in question
-- Contains Markdown combinder test script for if someone is viewing the markdown requirements on GitHub for the links to work better
-  - Separate files for the markdown requirements on GitHub (if viewing in browser) will go to the right section now but the page refreshed to the top requiring the user to manually refresh the page again to be linked to the section they clicked on
-- Fix to the markdown links
-- Visual fix to latex href links (pink -> blue)
-  - Pandocs defaults to pink for the external url links
-- Graphviz fix for level 4 requirements
-  - (Once the level fix for doorstop is implentmented this file should no longer have to be editted further)
-- Latex Beamer Link Fix
-  - L4-FOA-PMSS and L4-FOA-Struct not linking correctly in latest.pdf produced from beamers
-  - Error in beamers / .html is being kept in converting html to beamer  
+# requirements_tools
+## General Overview
+Scripts and tools for primarily the [pearl_requirements](https://github.com/uasal/pearl_requirements) repository to use. 
+
+Contains previously used tools for the repository (_in the archive-scripts directory_) that are no longer being used but could be useful still in another repository or later application.
+
+------------------------
+## Tools Overview
+### RunGraphviz.py
+For generating Requirement Flow and Requirement Connections graphs from requirements that are imported with doorstop.
+
+### get_gitinfo.sh
+For collecting the git information to be used in requirements' documentation.
+
+### publish.sh
+Runs the commands for starting scripts within the repository.
+
+### requirements.txt
+Update this file for updating any versions of tools that are being utilized for `requirements_tools` repository or within `pearl_requirements`.
+### archive-scripts
+Directory of previously used scripts for `requirements_tools` that are now '_archived_' but could be used again in a different application or repository. 
+###### Contains the following:
+- `BeamerLinkCorrection.py`
+- `MakeBeamers`
+- `MakeLinksGitHubFriendly.py`
+- `MarkdownCombiner.py`

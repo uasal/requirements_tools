@@ -8,7 +8,7 @@ np.random.seed(0)
 tree=doorstop.core.build()
 
 dot = Digraph(comment='The Requirements', format='png')
-dot.body.extend([ 'rankdir=LR','ratio=.65','size="75,50"','rank=min', "dpi = 25"]) #,
+dot.body.extend([ 'rankdir = LR\n','ratio = .65\n','size = "75,50"\n','rank = min\n', 'dpi = "25"\n'])
 dot.node_attr.update(color='lightblue2', style='filled',fontsize="55")
 
 show_orphans=True
@@ -119,11 +119,10 @@ for doc_n, document in  enumerate(tree.documents):
 #g.body.extend(['ratio=.6','size="75,50"','ranksep=".25"', "dpi = 160"]) #,
 
 g.attr(overlap='prism1000')
-#g.body.append('fontsize=18pt')
-
-g.render("dist/subgraphs")
+g.body.append('fontsize=18')
+g.render("dist/latex/subgraphs")
             
 dot.body.append('fontsize=20')
-dot.render('dist/Digraph_gv')#save("dot.svg")
+dot.render('dist/latex/Digraph_gv')#save("dot.svg")
 
 print('graphviz rendered')

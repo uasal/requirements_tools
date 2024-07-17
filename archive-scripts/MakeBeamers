@@ -1,0 +1,10 @@
+#via http://stackoverflow.com/a/11030209
+TEXDIR=dist/latex
+TEXS=$(wildcard dist/latex/L?.tex)
+MDS=$(patsubst %.tex,%_beamer.tex,$(TEXS))
+.PHONY : all
+
+all : $(MDS) 
+
+$(TEXDIR)/%_beamer.tex : $(TEXDIR)/%.tex $(TEXDIR)
+		pandoc -t beamer -f latex $< -o $@

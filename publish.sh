@@ -1,7 +1,7 @@
 #!/bin/bash
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 # This makes latex beamers / no need for markdown creation with doorstop update
-make -f $SCRIPT_DIR/MakeBeamers
+# make -f $SCRIPT_DIR/MakeBeamers
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     #(https://stackoverflow.com/a/8597411)

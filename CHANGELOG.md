@@ -2,6 +2,11 @@
 Overview of adjustments done in `requirements_tools`. Broken down into changes done per branch updates.
 
 ----------------
+## u/sfrinaldi/gitlab-workflow
+Adjustments to `publish.sh` for python command to be python3 instead for working in gitlab 
+
+
+----------------
 ## u/sfrinaldi/doorstop-update
 Adjustments to `requirements_tools` for working with the newer version of doorstop (_v3.0b1.5-1.0.0_) and updating other components (_like the graphviz version being used_).
 

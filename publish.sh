@@ -3,25 +3,25 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 # This makes latex beamers / no need for markdown creation with doorstop update
 # make -f $SCRIPT_DIR/MakeBeamers
 
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    #(https://stackoverflow.com/a/8597411)
-    #sed -e 's/{{find}}/{{replace}}/' -e 's/{{find}}/{{replace}}/' {{filename}}
-    # Mac OSX
-    #clean up the titles of the published requirements by remove everything between {# and } 
-    sed -i '' -e 's/{.*}//' dist/*.markdown
-    #change published links to point to markdown files:
-    sed -i '' -e 's/.html/.markdown/g' dist/*.markdown
-elif [[ "$OSTYPE" == "freebsd"* ]]; then
-    # assuming FreeBSD is not running GNU sed
-    sed -i '' -e 's/{.*}//' dist/*.markdown
-    sed -i '' -e 's/.html/.markdown/g' dist/*.markdown
-else
-    #run GNU sed in place commands:
-    sed -i -e 's/{.*}//' dist/*.markdown
-    sed -i -e 's/.html/.markdown/g' dist/*.markdown
-fi
+#if [[ "$OSTYPE" == "darwin"* ]]; then
+#    #(https://stackoverflow.com/a/8597411)
+#    #sed -e 's/{{find}}/{{replace}}/' -e 's/{{find}}/{{replace}}/' {{filename}}
+#    # Mac OSX
+#    #clean up the titles of the published requirements by remove everything between {# and }
+#    sed -i '' -e 's/{.*}//' dist/*.markdown
+#    #change published links to point to markdown files:
+#    sed -i '' -e 's/.html/.markdown/g' dist/*.markdown
+#elif [[ "$OSTYPE" == "freebsd"* ]]; then
+#    # assuming FreeBSD is not running GNU sed
+#    sed -i '' -e 's/{.*}//' dist/*.markdown
+#    sed -i '' -e 's/.html/.markdown/g' dist/*.markdown
+#else
+#    #run GNU sed in place commands:
+#    sed -i -e 's/{.*}//' dist/*.markdown
+#    sed -i -e 's/.html/.markdown/g' dist/*.markdown
+#fi
 
-python $SCRIPT_DIR/RunGraphviz.py
+python3 $SCRIPT_DIR/RunGraphviz.py
 
 # For generating the Pearl_Requirements.markdown file
 # These should no longer be needed with doorstop update that is pending completion (moved to archive-scripts)

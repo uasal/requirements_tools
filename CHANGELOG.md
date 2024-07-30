@@ -3,7 +3,9 @@ Overview of adjustments done in `requirements_tools`. Broken down into changes d
 
 ----------------
 ## u/sfrinaldi/gitlab-workflow
-Adjustments to `publish.sh` for python command to be python3 instead for working in gitlab 
+Adjusted `publish.sh` for python command to be `python3` instead for working in gitlab. Changes work with doorstop (_v3.0b1.5-1.0.0_).
+- Updated README.md for repository link references
+  - _(Adding GitLab repository link)_
 
 
 ----------------

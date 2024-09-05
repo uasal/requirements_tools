@@ -1,6 +1,26 @@
 # Change Log
 Overview of adjustments done in `requirements_tools`. Broken down into changes done per branch updates.
 
+---------------
+## u/sfrinaldi/rtm_doorstop
+_Adding features for RVM generation (requirement verification matrix) to used in pearl_requirements repositories.<br>Version 1.1.1 of [rtm_doorstop](https://github.com/asimon-1/rtm_doorstop) was used as a base for generating the RVM._
+
+- Cloned rtm_doorstop_tests (fork for rtm_doorstop) of v1.1.1.
+  - Changes done in comparison to the base rtm_doorstop version are detailed in the [rtm_doorstop/README.md](rtm_doorstop_edited/README.md) file.
+- Renamed directory to rtm_doorstop_edited.
+- Added additional requirements to the [requirements.txt](requirements.txt)
+
+**Overview of main rtm_doorstop_edited edits:**
+  - Changed csv and console output table to have RVM columns that were added to requirement csv files in pearl_requirements.
+  - Added markdown RVM output functionality
+
+**Working Example RVM Output**
+
+|    | UID     | Text                     | Test Method(s) |             Tier | Status               |
+|---:|:--------|:-------------------------|---------------:|-----------------:|:---------------------|
+|  0 | L0-0000 | Example Requirement Text | Analysis, Test | System, Assembly | Unverified, Verified |
+
+
 ----------------
 ## u/sfrinaldi/gitlab-workflow
 Adjusted `publish.sh` for python command to be `python3` instead for working in gitlab. Changes work with doorstop (_v3.0b1.5-1.0.0_).

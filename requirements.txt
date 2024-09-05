@@ -3,4 +3,8 @@ numpy
 PyYAML
 pandoc>=2.3
 pydot>=2
+rapidtables
+fire
+tabulate
+pandas
 

@@ -13,13 +13,13 @@ dot.node_attr.update(color='lightblue2', style='filled',fontsize="55")
 
 show_orphans=True
 use_id=True
-use_short_names=True
+use_short_names=False
 colors=['black','blue','chocolate','crimson', 'orchid', 'green','darkgreen','khaki','violet','purple','orange','lightblue2',]
 n_colors = len(colors)
 
 # Adding additional colors for levels as its potentially treating each csv as a different level so
 # there are currently 8 levels its potentially trying to add into there at the moment.
-level_colors = ['yellow','gray88','lightblue','green','violet','crimson','blue','khaki',]
+level_colors = ['aqua', 'blue', 'fuchsia', 'gray', 'green', 'lime', 'maroon', 'navy', 'olive', 'purple', 'lightslategray', 'silver', 'teal', 'yellow','red',]
 
 for doc_n, document in  enumerate(tree.documents):
 
